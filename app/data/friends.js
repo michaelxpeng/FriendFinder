@@ -96,7 +96,7 @@ var artists = [
     ]
   },
   {
-    "name": "blink-18",
+    "name": "blink-182",
     "photo": "http://dyingscene.com/wp-content/uploads/blink-182.jpeg",
     "scores": [
       3,
