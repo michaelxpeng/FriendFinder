@@ -8,12 +8,16 @@ I personally changed the theme to be a Music Finder, which matches the user with
 https://michaelxpeng-friendfinder.herokuapp.com/
 
 ## Screenshots
-![home](home.png)
 Home page
-![survey](survey.png)
+![home](home.png)
+
+
 Survey page
-![modal](modal.png)
+![survey](survey.png)
+
+
 Modal
+![modal](modal.png)
 
 ## Dependencies
 * Node.js
