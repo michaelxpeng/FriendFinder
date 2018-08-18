@@ -1,21 +1,21 @@
 // Dependencies
-var friends = require('../data/friends.js');
+var artists = require('../data/friends.js');
 
-// Route that sends the user to the friends API page
+// Route that sends the user to the artists API page
 module.exports = function (app) {
-  app.get('/api/friends', function (req, res) {
-    res.json(friends);
+  app.get('/api/artists', function (req, res) {
+    res.json(artists);
   });
 
-  app.post('/api/friends', function (req, res) {
-    var friendScores = req.body.scores;
+  app.post('/api/artists', function (req, res) {
+    var artistScores = req.body.scores;
     var scoresArr = [];
     var closestMatch = 0;
 
-    for (var i = 0; i < friends.length; i++) {
+    for (var i = 0; i < artists.length; i++) {
       var totalDifference = 0;
-      for (var j = 0; j < friendScores.length; j++) {
-        totalDifference += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(friendScores[j])));
+      for (var j = 0; j < artistScores.length; j++) {
+        totalDifference += (Math.abs(parseInt(artists[i].scores[j]) - parseInt(artistScores[j])));
       }
       scoresArr.push(totalDifference);
     }
@@ -26,8 +26,10 @@ module.exports = function (app) {
       }
     }
 
-    var newFriend = friends[closestMatch];
-    res.json(newFriend);
-    friends.push(req.body);
+    var newArtist = artists[closestMatch];
+    res.json(newArtist);
+    
+    // no need to push new entry if only searching for matches for bands
+    // artists.push(req.body);
   });
 };
