@@ -1,15 +1,22 @@
 # FriendFinder
 
-In this homework assignment for Rutgers Coding Bootcamp, students were asked to build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+In this homework assignment for Rutgers Coding Bootcamp, students were asked to build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from users' surveys, then compare their answers with those from other users. The app will use Express to handle routing and then display the name and picture of the user with the best overall match.
 
-The goal was to create a Friend Finder app (essentially a dating app but for friends) using Node and Express servers. The user enters the page that leads to a survey. When the user submits the survey, they are matched with a "friend" that has the closest match to their personality.
+I personally changed the theme to be a Music Finder, which matches the user with a database of artists instead of friends. I also disabled the push to that database after taking the users' surveys since it wasn't necessary for this particular purpose.
 
-In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+## Heroku link
+https://michaelxpeng-friendfinder.herokuapp.com/
 
-You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
+## Screenshots
+![home](home.png)
+Home page
+![survey](survey.png)
+Survey page
+![modal](modal.png)
+Modal
 
-What the project does
-Why the project is useful
-How users can get started with the project
-Where users can get help with your project
-Who maintains and contributes to the project
+## Dependencies
+* Node.js
+* Express
+* body-parser
+* path
