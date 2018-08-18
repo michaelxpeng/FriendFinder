@@ -190,12 +190,30 @@
       </div>
     </footer>
 
-  <!-- // close container -->
+    <!-- MODAL -->
+    <div class="modal fade" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title">Meet Your New Friend!</h5>
+          </div>
+          <div class="modal-body text-center">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="" alt="" height="200" width="200">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // Close container -->
   </div>
 
 
   <script type="text/javascript">
-  // Takes user input from the page and sends it to the friends API
+    // Takes user input from the page and sends it to the friends API
     $("#submit").on("click", function (event) {
       event.preventDefault();
       var friendData = {
@@ -215,9 +233,17 @@
         ]
       };
 
+      // Sends matching friend data to modal for display
       $.post("/api/friends", friendData, function (data) {
-
+        $("#match-name").text(data.name);
+        $("#match-img").attr("src", data.photo);
+        $("#results-modal").modal("toggle");
       });
+
+      // Refreshs page after modal closes
+      $('#results-modal').on('hidden.bs.modal', function () {
+        location.reload();
+      })
     });
 
   </script>
