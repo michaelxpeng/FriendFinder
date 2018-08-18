@@ -27,7 +27,7 @@ module.exports = function (app) {
     }
 
     var newFriend = friends[closestMatch];
-    res.JSON(newFriend);
+    res.json(newFriend);
     friends.push(req.body);
   });
 };
